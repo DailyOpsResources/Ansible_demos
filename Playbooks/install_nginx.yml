@@ -1,0 +1,17 @@
+---
+# Install Nginx package using package manager. Start Nginx service and enable it to start automatically on system boot
+
+- name: Install and start Nginx
+  hosts: target-servers
+  become: true
+  tasks:
+    - name: Install Nginx package
+      package:
+        name: nginx
+        state: present
+
+    - name: Start Nginx service
+      service:
+        name: nginx
+        state: started
+        enabled: true
