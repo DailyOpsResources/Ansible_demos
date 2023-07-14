@@ -3,7 +3,7 @@
 # Add packages as per your need. 
 
 - name: Install common packages for CentOS 7
-  hosts: target-servers
+  hosts: all
   become: true
   tasks:
     - name: Install essential packages
