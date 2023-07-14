@@ -1,0 +1,46 @@
+---
+# Install Apache HTTP Server (Apache), MariaDB Database Server (MySQL-compatible), Install PHP and PHP MySQL extension and Open firewall ports for HTTP (80) and HTTPS (443)
+
+- name: Install LAMP Stack and Open Firewall Ports
+  hosts: 127.0.0.1
+  become: true
+
+  tasks:
+    - name: Install Apache HTTP Server
+      package:
+        name: httpd
+        state: present
+
+
+    - name: Start Apache HTTP service
+      service:
+        name: httpd
+        state: started
+        enabled: true
+
+
+    - name: Install MariaDB Database Server
+      package:
+        name: mariadb-server
+        state: present
+
+
+    - name: Start MariaDB service
+      service:
+        name: mariadb
+        state: started
+        enabled: true
+
+    - name: Install PHP
+      package:
+        name:
+          - php
+          - php-mysql
+        state: present
+
+
+    - name: Open Firewall Ports for HTTP and HTTPS
+      firewalld:
+        service: http
+        permanent: true
+        state: enabled
