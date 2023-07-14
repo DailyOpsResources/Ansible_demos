@@ -1,0 +1,44 @@
+---
+# Install essential packages commonly used for daily administrative tasks, development tools for compiling and building software, useful utilities for network diagnostics, monitoring, and management.
+# Add packages as per your need. 
+
+- name: Install common packages for CentOS 7
+  hosts: target-servers
+  become: true
+  tasks:
+    - name: Install essential packages
+      package:
+        name:
+          - vim
+          - wget
+          - curl
+          - net-tools
+          - telnet
+          - lsof
+          - htop
+          - tree
+          - zip
+          - unzip
+        state: present
+
+    - name: Install development tools
+      package:
+        name:
+          - gcc
+          - make
+          - openssl-devel
+          - libffi-devel
+        state: present
+
+    - name: Install useful utilities
+      package:
+        name:
+          - jq
+          - ncdu
+          - rsync
+          - sysstat
+          - tcpdump
+          - nmap
+          - bind-utils
+          - psmisc
+        state: present
