@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # Ansible_playbooks
+=======
+# Ansible_demos
+>>>>>>> 42940b156ff01f099848f1203235533692c44886
 
 This repository contains Ansible playbooks for automating infrastructure deployments. Ansible is an open-source automation tool that simplifies managing IT infrastructure. Playbooks, written in YAML, define desired system states and automate tasks.
 
