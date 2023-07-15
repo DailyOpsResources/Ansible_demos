@@ -1,0 +1,21 @@
+---
+
+#This playbook is useful when you need to copy multiple files from a local machine to a remote server using Ansible. It provides a flexible and automated way to transfer files and ensures consistent deployment across multiple hosts.
+#Modify the paths as per your environment and target server configurations.
+
+
+- name: Copy files to remote server
+  hosts: all
+  become: true
+
+  tasks:
+    - name: Copy files to remote server
+      copy:
+        src: "{{ item.src }}"
+        dest: "{{ item.dest }}"
+        owner: root
+        mode: 0755
+      with_items:
+        - { src: '/path/to/src', dest: '/path/to/dest' }
+        - { src: '/path/to/src', dest: '/path/to.dest' }
+        - { src: '/path/to/src', dest: '/path/to/dest' }
