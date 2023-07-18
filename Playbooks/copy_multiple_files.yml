@@ -1,7 +1,8 @@
 ---
 
-#This playbook is useful when you need to copy multiple files from a local machine to a remote server using Ansible. It provides a flexible and automated way to transfer files and ensures consistent deployment across multiple hosts.
-#Modify the paths as per your environment and target server configurations.
+# This playbook is useful when you need to copy multiple files from a local machine to a remote server using Ansible.
+# It provides a flexible and automated way to transfer files and ensures consistent deployment across multiple hosts.
+# Modify the paths as per your environment and target server configurations.
 
 
 - name: Copy files to remote server

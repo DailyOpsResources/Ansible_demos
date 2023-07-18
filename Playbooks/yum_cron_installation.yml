@@ -1,0 +1,29 @@
+---
+# yum-cron is a utility automates the process of installing package updates and security patches. 
+# # It allows system administrators to keep their servers up-to-date without manual intervention, ensuring security and stability.
+# # Modify the configuration file that suit your environment. By default, yum-cron runs daily and 
+# # download package updates but not apply them immediately. 
+
+- name: Install and start yum-cron service
+  hosts: 127.0.0.1
+  become: true
+
+  tasks:
+    - name: Install yum-cron package
+      yum:
+        name: yum-cron
+        state: present
+
+    - name: Copy yum-cron configuration file
+      copy:
+        src: /files/yum-cron.conf
+        dest: /etc/yum/yum-cron.conf
+        owner: root
+        group: root
+        mode: "0644"
+
+    - name: Start yum-cron service
+      service:
+        name: yum-cron
+        state: started
+        enabled: yes
