@@ -1,5 +1,6 @@
 ---
-# This playbook installs the chrony package and copies the chrony configuration file to configure the chronyd service on target servers. It ensures that the service is started and enabled to run automatically on system boot.
+# This playbook installs the chrony package and copies the chrony configuration file to configure the chronyd service on target servers.
+# It ensures that the service is started and enabled to run automatically on system boot.
 # Modify the paths as per your environment and target server configurations.
 
 - name: Install and configure chronyd
